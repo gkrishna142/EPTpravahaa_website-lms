@@ -1,0 +1,5 @@
+/* App shell — design system aware */
+.App {
+  min-height: 100vh;
+  background-color: var(--color-bg-subtle, #f8fafc);
+}

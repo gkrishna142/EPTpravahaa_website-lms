@@ -1,0 +1,3 @@
+# SPA fallback for Netlify / similar hosts
+# Ensures /contact, /enroll, etc. work on direct access
+/*    /index.html   200

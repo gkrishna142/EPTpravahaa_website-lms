@@ -1,0 +1,99 @@
+/* Banner uses design tokens — hero gradient: teal/slate */
+.text-banner {
+  position: relative;
+  width: 100%;
+  min-height: 55vh;
+  overflow: hidden;
+  font-family: var(--font-sans);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-text-inverse);
+  background: var(--gradient-hero);
+}
+
+.text-slide {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transform: scale(1.1);
+  transition: opacity 1s ease-in-out, transform 1.5s ease-in-out;
+  background: var(--gradient-hero);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+}
+
+.text-slide.active {
+  opacity: 1;
+  transform: scale(1);
+  z-index: 2;
+}
+
+.text-title {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #ffffff;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+}
+
+.text-description {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.text-button {
+  background: var(--gradient-cta);
+  border: none;
+  padding: 0.9rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  box-shadow: var(--shadow-glow-primary);
+  transition: all 0.3s ease;
+}
+
+.text-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 35px rgba(13, 148, 136, 0.5);
+}
+
+.dot.active {
+  background: var(--color-primary-light);
+  transform: scale(1.3);
+  box-shadow: 0 0 12px rgba(56, 189, 248, 0.6);
+}
+
+.banner-info {
+  background: var(--color-bg-subtle);
+  text-align: center;
+  padding: 2rem 1rem;
+  color: var(--color-text);
+  font-size: 1.05rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.highlight {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@media (max-width: 768px) {
+  .text-title { font-size: 2rem; }
+  .text-description { font-size: 1rem; }
+  .text-button { padding: 0.7rem 1.5rem; }
+}

@@ -1,0 +1,8 @@
+# Project dependencies
+Django
+djangorestframework
+djangorestframework-simplejwt
+django-cors-headers
+channels
+python-dotenv
+psycopg2-binary
